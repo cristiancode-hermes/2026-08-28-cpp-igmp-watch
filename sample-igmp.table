@@ -1,0 +1,22 @@
+Idx	Device    : Count Querier	Group    Users Timer	Reporter
+# loopback — all-hosts (224.0.0.1)
+1	lo        :     1      V3
+				010000E0     1 0:00000000		0
+# office NIC: all-hosts + mDNS + IGMPv3 + SSDP
+2	eth0      :     4      V3
+				010000E0     1 0:00000000		0
+				FB0000E0     2 0:00000000		0
+				160000E0     1 0:00000000		0
+				FAFFFFEF     3 1:00000A00		1  # SSDP last reporter, timer running
+# wifi: mDNS + LLMNR (IGMPv2 querier)
+3	wlan0     :     2      V2
+				FB0000E0     4 0:00000000		0
+				FC0000E0     1 0:00000000		0
+# docker bridge
+4	docker0   :     1      V3
+				010000E0     1 0:00000000		0
+# LAN bridge: all-routers + IGMPv3 + RIP
+5	br-lan    :     3      V3
+				020000E0     1 0:00000000		0
+				160000E0     1 0:00000000		0
+				090000E0     1 0:00000000		0
